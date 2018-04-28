@@ -1,5 +1,5 @@
 influxdb:
-  image: influxdb:latest
+  image: influxdb:1.5.2
   container_name: influxdb
   ports:
     - "8083:8083"
@@ -13,7 +13,7 @@ influxdb:
     - /srv/docker/influxdb/data:/var/lib/influxdb
 
 telegraf:
-  image: telegraf:latest
+  image: telegraf:1.6.1
   container_name: telegraf
   links:
     - influxdb
@@ -21,7 +21,7 @@ telegraf:
     - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
 
 grafana:
-  image: grafana/grafana:latest
+  image: grafana/grafana:5.1.0
   container_name: grafana
   ports:
     - "3000:3000"

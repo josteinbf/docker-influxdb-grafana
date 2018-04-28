@@ -35,12 +35,7 @@ docker-compose rm
 
 Update it:
 
-```
-git pull
-docker pull grafana/grafana
-docker pull influxdb
-docker pull telegraf
-```
+Modify version numbers in docker-compose.yml to your liking, then stop and restart.
 
 If you want to run Telegraf, edit the telegraf.conf to yours needs and:
 
