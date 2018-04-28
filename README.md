@@ -3,14 +3,13 @@
 # + Grafana stack
 # + Telegraf
 
-Get the stack (only once):
+Get the stack and create volumes (only once):
 
 ```
 git clone https://github.com/josteinbf/docker-influxdb-grafana.git
 cd docker-influxdb-grafana
-docker pull grafana/grafana
-docker pull influxdb
-docker pull telegraf
+docker volume create influxdb-storage
+docker volume create grafana-storage
 ```
 
 Run your stack:
