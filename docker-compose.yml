@@ -1,6 +1,7 @@
 influxdb:
   image: influxdb:1.5.2
   container_name: influxdb
+  restart: always
   ports:
     - "8083:8083"
     - "8086:8086"
@@ -15,6 +16,7 @@ influxdb:
 telegraf:
   image: telegraf:1.6.1
   container_name: telegraf
+  restart: always
   links:
     - influxdb
   volumes:
@@ -23,6 +25,7 @@ telegraf:
 grafana:
   image: grafana/grafana:5.1.0
   container_name: grafana
+  restart: always
   ports:
     - "3000:3000"
   env_file:
